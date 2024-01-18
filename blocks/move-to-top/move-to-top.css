@@ -1,0 +1,26 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.section.move-to-top-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.move-to-top.block {
+  display: none;
+  background: cornflowerblue;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+  color: white;
+  transition: 0.3s all ease-in;
+}
+
+.move-to-top.block:hover {
+  background: #5d6dbf;
+  color: white;
+}

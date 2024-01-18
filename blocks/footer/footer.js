@@ -22,4 +22,27 @@ export default async function decorate(block) {
     decorateIcons(footer);
     block.append(footer);
   }
+  const rows = [...block.children];
+  [...block.children].forEach((row, r) => {
+
+  });
+
+  const sub = document.querySelector('#stay-connected-with-lenovo-pccw-solutions-community');
+  sub.classList.add('sub');
+  const tempDiv2 = document.createElement("div");
+  tempDiv2.setAttribute('class', 'email-submit');
+  sub.insertAdjacentElement('afterend', tempDiv2);
+  const tempDiv = document.createElement("input");
+  tempDiv.setAttribute('placeholder', 'Type your email');
+  tempDiv2.appendChild(tempDiv);
+  const tempDiv1 = document.createElement("button");
+  tempDiv1.innerHTML = 'Subscribe';
+  tempDiv1.classList.add('footer-submit-btn');
+  tempDiv2.appendChild(tempDiv1);
+  const footerLinks = document.querySelectorAll('.footer-sol a');
+  footerLinks.forEach(link => {
+    link.classList.add('footer-link');
+  });
+
 }
+

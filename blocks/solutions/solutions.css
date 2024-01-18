@@ -1,0 +1,17 @@
+.section.breadcrumb-container.image-container {
+  padding: 0 !important;
+}
+.section > div {
+  max-width: fit-content !important;
+  margin: 0 !important;
+}
+
+.section.flex-item-container.accordion-container {
+  display: grid;
+  grid-template-columns: 50% repeat(2, 1fr);
+  align-items: center;
+  grid-gap: 20px;
+  justify-items: center;
+  grid-auto-flow: column;
+  background: #4d144a;
+}

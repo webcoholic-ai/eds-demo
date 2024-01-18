@@ -1,0 +1,57 @@
+.section.small-card-container {
+  background-color: linear-gradient(to-right, #535678, #7b456d);
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #896379 0%,
+    #784ba0 50%,
+    #4f7188 100%
+  );
+}
+.small-card-container #more-to-explore {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.small-card.block {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1rem;
+}
+
+.small-card-flex {
+  padding: 20px 2.5rem;
+  background: white;
+}
+
+.small-card-flex div:first-child {
+  text-overflow: ellipsis;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.small-card-flex .button-container a {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  opacity: 1;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 13px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  border: 1px solid black;
+  margin: 16px 0 0;
+  background-color: white;
+  color: #294e95;
+  text-decoration: underline;
+}
+.small-card-flex .button-container a:hover {
+  color: #7a126b;
+  background-color: initial;
+}

@@ -1,0 +1,79 @@
+.panel {
+  /* display: none;
+  padding: 10px;
+  background-color: white; */
+  padding: 0 18px;
+  background-color: white;
+  /* max-height: 0; */
+  display: none;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+}
+
+.panel-open {
+  display: block;
+  padding: 1rem 18px;
+}
+
+.acc-element {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  width: 600px;
+  gap: 500px;
+  /* padding: 5px 10px; */
+  cursor: pointer;
+  gap: 0;
+  background: #eee;
+  color: #232323;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.title {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.acc-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordionTitle:after {
+  content: attr(data-value);
+  color: #ffffff;
+  font-weight: 300;
+  float: right;
+  margin-left: 5px;
+  font-size: 2.5rem;
+}
+
+.accordionTitle {
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordionTitle + .accordionContent {
+  display: none;
+  padding-bottom: 20px;
+}
+
+.accordionTitle.is-open + .accordionContent {
+  display: block;
+}
+
+/* .accordionTitle.is-open,
+.accordionTitle:after {
+  content: "\2212";
+}  */

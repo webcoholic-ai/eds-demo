@@ -120,6 +120,18 @@ export default async function decorate(block) {
             navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
           }
         });
+        // navSection.addEventListener('mouseover', (e) => {
+        //   if (isDesktop.matches) {
+        //     e.stopPropagation();
+        //     console.log(e.currentTarget.children.item(0).classList.toggle('active'));
+        //     // let sty = e.currentTarget.children.item(0).style.display;
+        //     // sty === 'block' ? sty = 'none' : sty = 'block';
+        //     e.currentTarget.children.item(0).classList.toggle('active');
+        //     const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        //     toggleAllNavSections(navSections);
+        //     navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        //   }
+        // });
       });
     }
 
@@ -142,4 +154,49 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     block.append(navWrapper);
   }
+
+  const navTools = document.querySelector('.nav-tools');
+
+  // const tempDiv = document.createElement("input");
+  // tempDiv.setAttribute('placeholder', 'Search...');
+  // navTools.prepend(tempDiv);
+
+  const navDropText = document.querySelector('.nav-drop ul');
+  const text = document.createElement('li');
+  text.textContent = 'Explore your industry';
+  navDropText.prepend(text);
+
+
+  let navDropLink = document.querySelectorAll('.nav-drop > a');
+  let ln, link;
+  for (ln = 0; ln < navDropLink.length; ln++) {
+    navDropLink[ln].setAttribute("href", 'javascript:void(0)');
+  }
+  // document.querySelector('header nav .nav-sections').addEventListener('click', (e) => {
+  //   let allNavLinks = document.querySelectorAll('header nav .nav-sections .nav-drop > ul');
+  //   console.log(allNavLinks);
+  //   for (link = 0; link < allNavLinks.length; link++) {
+  //     console.log(allNavLinks[link]);
+  //     allNavLinks[link].classList.remove('nav-active');
+  //   }
+  //   console.log(e.target.nextElementSibling);
+  //   e.target.nextElementSibling.classList.add('nav-active');
+  // });
+
+  let navDropEl = document.querySelectorAll('header nav .nav-sections .nav-drop > a');
+
+  navDropEl.forEach((ele) => {
+    ele.addEventListener("click", (e) => {
+      if (e.target.nextElementSibling.classList.contains("nav-active")) {
+        e.target.nextElementSibling.classList.remove("nav-active");
+      } else {
+        const elesWithIsOpen = document.querySelectorAll(".nav-active");
+        elesWithIsOpen.forEach((eleWithIsOpen) => {
+          eleWithIsOpen.classList.remove("nav-active");
+        });
+        e.target.nextElementSibling.classList.add("nav-active");
+      }
+    });
+  });
 }
+

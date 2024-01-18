@@ -1,0 +1,43 @@
+.section.image-container {
+  padding: 1rem 0 2rem !important;
+}
+.section > div {
+  /* max-width: fit-content !important; */
+  /* margin: 0 !important; */
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  /* height: 37.5rem !important; new */
+  object-fit: cover;
+}
+
+.section.image-container > div {
+  max-width: none;
+  margin: 0;
+}
+
+.image-wrapper:before {
+  content: "";
+  position: absolute;
+  /* background: url(../images/common/gradient2.svg) left bottom repeat-x; */
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 4%,
+    rgba(255, 255, 255, 0.08) 78%
+  );
+}
+
+.image-wrapper img {
+  object-fit: cover;
+  height: 20rem;
+  width: -webkit-fill-available;
+}

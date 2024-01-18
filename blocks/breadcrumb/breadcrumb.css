@@ -1,0 +1,26 @@
+.section.breadcrumb-container {
+  /* padding: 0 !important;
+  position: absolute;
+  top: 110px;
+  z-index: 1;
+  width: -webkit-fill-available; */
+}
+.section > div {
+  /* max-width: fit-content !important; */
+  /* margin: 0 !important; */
+}
+
+.breadcrumb-wrapper {
+}
+
+.breadcrumb.block {
+  font-size: 1rem;
+  /* color: white; */
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+}
+
+main .section.breadcrumb-container {
+  padding: 4rem 1rem 0 !important;
+}

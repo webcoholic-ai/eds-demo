@@ -1,0 +1,31 @@
+.section.text-container {
+  padding: 0 !important;
+}
+
+.text.block {
+  position: absolute;
+  top: 200px;
+  color: white;
+  width: 60%;
+}
+
+main .hero {
+  position: relative;
+  padding: 32px;
+  min-height: 300px;
+  height: 24.5rem !important;
+}
+
+.para {
+  font-size: 1rem;
+}
+
+main .hero-container > div {
+  max-width: unset;
+}
+
+.explore-text.block {
+  background: #eaeef5;
+  text-align: center;
+  padding-bottom: 60px;
+}

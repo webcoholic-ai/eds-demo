@@ -9,7 +9,7 @@
 
 .cards > ul > li {
   border: 1px solid var(--highlight-background-color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
 }
 
 .cards .cards-card-body {
@@ -28,4 +28,27 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards-container .default-content-wrapper {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+main .section.cards-container.highlight {
+  background-color: #eaeef5;
+  margin: 64px 32px;
+  padding: 30px 0;
+}
+
+.cards-wrapper {
+  padding: 0 35px;
+}
+
+.cards-card-body .button-container a {
+  background: none !important;
+  color: blue;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding-left: 0;
 }
