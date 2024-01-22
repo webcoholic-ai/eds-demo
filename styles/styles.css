@@ -281,8 +281,8 @@ main .section {
 
 @media (max-width: 900px) {
   li,
-  p,
-  a {
+  a,
+  p {
     font-family: "Questrial", sans-serif;
   }
 }
@@ -303,10 +303,6 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: #eaeef5;
-}
-
-p.button-container a {
-  background: bisque !important;
 }
 
 .check .button-container a {

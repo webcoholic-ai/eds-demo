@@ -158,3 +158,97 @@ hr:not([size]) {
   text-decoration: none;
   text-transform: capitalize;
 }
+
+.social-icon {
+  width: 33px;
+  display: block;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+  display: inline-flex;
+  margin: 5px;
+  position: relative;
+}
+
+.fb-icon {
+  background-image: url("../../icons/fb.svg");
+}
+.in-icon {
+  background-image: url("../../icons/linkedin.svg");
+}
+.tw-icon {
+  background-image: url("../../icons/twitter.svg");
+}
+.wc-icon {
+  background-image: url("../../icons/wechat.svg");
+}
+.yt-icon {
+  background-image: url("../../icons/youtube.svg");
+}
+
+.social-icon:before {
+  content: "";
+  transition: all 0.4s cubic-bezier(0.32, 0.34, 0, 1.62);
+  display: block;
+  position: absolute;
+  background: #005496;
+  width: 100%;
+  transform: scale(0);
+  height: 100%;
+  z-index: -2;
+  border-radius: 100%;
+}
+.social-icon:hover:before {
+  transform: scale(1);
+}
+
+.social-icon:hover:after {
+  opacity: 0;
+}
+.social-icon:after {
+  content: "";
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #163583;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 100%;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 991px) {
+  .footer-sol {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer-sol > div:last-child {
+    display: block;
+    text-align: center;
+  }
+
+  .footer-sol > div:not(last-child) {
+    display: none;
+  }
+
+  .footer-sol-bottom {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 15px;
+    text-align: center;
+    color: #828282;
+  }
+  .email-submit input {
+    width: 50%;
+  }
+  .email-submit .footer-submit-btn {
+    margin-left: 10px;
+  }
+}
+/* MEDIA QUERIES */

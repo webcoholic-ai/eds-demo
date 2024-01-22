@@ -152,3 +152,49 @@ div.slide-text {
 .long-arrow-right:focus {
   background: 0;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 991px) {
+  .carousel-container {
+    padding: 0 !important;
+  }
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+  .carousel-wrapper {
+    height: auto;
+    padding: 0;
+  }
+  .slider {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    margin-top: 1rem;
+  }
+  .slider > div {
+    position: relative;
+    padding: 0;
+    left: 0 !important;
+  }
+  .slider > div p {
+    padding: 0 20px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    color: #212529;
+  }
+  .slider > div h3 {
+    font-size: 1.33rem;
+    font-weight: 400;
+    padding: 0 20px;
+  }
+  .carousel-wrapper a {
+    all: unset !important;
+  }
+  .carousel > div > div:nth-child(2) {
+    padding-bottom: 10px;
+  }
+}
