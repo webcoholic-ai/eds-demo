@@ -1,7 +1,7 @@
 import { getMetadata, decorateIcons } from '../../scripts/aem.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 1025px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {

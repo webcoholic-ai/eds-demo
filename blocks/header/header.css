@@ -37,7 +37,7 @@ header nav[aria-expanded="true"] {
   }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1025px) {
   header nav {
     display: flex;
     justify-content: space-between;
@@ -135,7 +135,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1025px) {
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
@@ -191,7 +191,7 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 500;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1025px) {
   header nav .nav-sections {
     display: block;
     visibility: visible;
@@ -369,15 +369,7 @@ header nav .nav-sections .nav-drop {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 991px) and (max-width: 1199px) {
-  header nav {
-    display: flex;
-  }
-  header nav[aria-expanded="true"] .nav-sections {
-  }
-}
-
-@media (max-width: 991px) {
+@media (max-width: 1025px) {
   header nav {
     gap: 10px;
   }
@@ -465,7 +457,7 @@ header nav .nav-sections .nav-drop {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1025px) {
   header nav .nav-brand img {
     height: 28px;
     width: 201px;

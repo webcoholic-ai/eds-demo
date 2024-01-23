@@ -3,12 +3,6 @@ export default function decorate(block) {
     [...block.children].forEach((row, r) => {
         row.classList.add('next-sec');
     });
-
-    const r = fetch('http://localhost:3000/countdown')
-        .then(res =>{return res}).
-        then(data => console.log(data));
-
-
 };
 
 setTimeout(() => {
