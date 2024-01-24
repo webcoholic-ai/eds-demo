@@ -103,7 +103,7 @@ export default async function decorate(block) {
     nav.id = 'nav';
     nav.innerHTML = html;
 
-    const classes = ['brand', 'sections', 'tools'];
+    const classes = ['brand', 'sections', 'tools', 'search-bar'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
@@ -155,7 +155,7 @@ export default async function decorate(block) {
     block.append(navWrapper);
   }
 
-  const navTools = document.querySelector('.nav-tools');
+  const navTools = document.querySelector('.nav-tools .icon img');
 
   // const tempDiv = document.createElement("input");
   // tempDiv.setAttribute('placeholder', 'Search...');
@@ -197,6 +197,31 @@ export default async function decorate(block) {
         e.target.nextElementSibling.classList.add("nav-active");
       }
     });
+  });
+
+  const navSearchBar = document.querySelector('.nav-search-bar > p');
+  navSearchBar.classList.add('container');
+
+  let inputGroupEl = document.createElement('div');
+  inputGroupEl.classList.add('input-group');
+  navSearchBar.prepend(inputGroupEl);
+
+  let inputEl = document.createElement('input');
+  inputEl.setAttribute("id", "searchinputtext");
+  inputEl.classList.add('form-control');
+  inputEl.classList.add('search_query');
+  inputGroupEl.prepend(inputEl);
+
+  let searchIcon = document.querySelectorAll('.icon-search')[0];
+  let searchDropDown = document.querySelector('.nav-search-bar');
+
+  searchIcon.addEventListener('click', function (e) {
+    searchDropDown.classList.toggle('search-active');
+    if (navTools.src.indexOf('icons/search-cross.svg') != -1) {
+      navTools.src = 'icons/search.svg';
+    } else {
+      navTools.src = 'icons/search-cross.svg';
+    }
   });
 }
 
