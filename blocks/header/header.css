@@ -20,7 +20,6 @@ header nav {
   height: var(--nav-height);
   padding: 0 1rem;
   font-family: var(--body-font-family);
-  position: relative;
 }
 
 header nav[aria-expanded="true"] {
@@ -256,7 +255,7 @@ header nav .nav-sections ul > li > ul > li {
   padding: 50px;
 }
 
-.input-group {
+.nav-search-bar .input-group {
   width: -webkit-fill-available;
 }
 
@@ -277,7 +276,7 @@ header nav .nav-sections ul > li > ul > li {
   outline: none;
 }
 
-.icon {
+.nav-search-bar .icon {
   margin: 0.5rem 1rem 0.5rem 1.2rem;
   cursor: pointer;
 }
