@@ -56,7 +56,7 @@ function highlightTextElements(terms, elements) {
       if (textBefore) {
         acc.appendChild(document.createTextNode(textBefore));
       }
-      const markedTerm = document.createElement("mark");
+      const markedTerm = document.createElement("h4");
       markedTerm.textContent = term;
       acc.appendChild(markedTerm);
       currentIndex = offset + term.length;
@@ -85,7 +85,7 @@ export async function fetchData(source) {
     console.error("empty API response", source);
     return null;
   }
-
+  console.log(json.data);
   return json.data;
 }
 
@@ -253,21 +253,21 @@ function searchInput(block, config) {
 }
 
 function searchIcon() {
-  const icon = document.createElement("span");
-  icon.classList.add("icon", "icon-search");
-  return icon;
+  // const icon = document.createElement("span");
+  // icon.classList.add("icon", "icon-search");
+  // return icon;
 }
 
 function searchBox(block, config) {
   const box = document.createElement("div");
   box.classList.add("search-box");
-  box.append(searchIcon(), searchInput(block, config));
-
+  box.append(searchInput(block, config));
   return box;
 }
 
 export default async function decorate(block) {
   const placeholders = await fetchPlaceholders();
+  console.log(block);
   const source = block.querySelector("a[href]")
     ? block.querySelector("a[href]").href
     : "/query-index.json";

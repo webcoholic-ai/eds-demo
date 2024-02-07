@@ -1,4 +1,8 @@
 import { getMetadata, decorateIcons } from "../../scripts/aem.js";
+import {
+  createOptimizedPicture,
+  fetchPlaceholders,
+} from "../../scripts/aem.js";
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia("(min-width: 1025px)");
@@ -231,20 +235,49 @@ export default async function decorate(block) {
   inputEl.classList.add("search_query");
   inputGroupEl.prepend(inputEl);
 
-  let searchIcon = document.querySelectorAll(".icon-search")[0];
+  let searchIcons = document.querySelectorAll(".icon-search")[0];
   let searchIconBg = document.querySelectorAll(".icon-search")[1];
   let searchDropDown = document.querySelector(".nav-search-bar");
 
-  searchIcon.addEventListener("click", function (e) {
-    searchDropDown.classList.toggle("search-active");
-    if (navTools.src.indexOf("icons/search-cross.svg") != -1) {
-      navTools.src = "icons/search.svg";
-    } else {
-      navTools.src = "icons/search-cross.svg";
-    }
+  searchIcons.addEventListener("click", function (e) {
+    // searchDropDown.classList.toggle("search-active");
+    // if (navTools.src.indexOf("icons/search-cross.svg") != -1) {
+    //   navTools.src = "icons/search.svg";
+    // } else {
+    //   navTools.src = "icons/search-cross.svg";
+    // }
+    window.open("/search", "_blank");
   });
 
   searchIconBg.setAttribute("id", "search");
   let search = document.getElementById("search");
   let searchInputText = document.getElementById("searchinputtext");
+  let inputValue = "";
+
+  function searchHandle() {
+    console.log(searchInputText.value);
+    inputValue = searchInputText.value;
+    let w = window.open(`/search`, "_blank");
+
+    w.onload = function () {
+      let searchInputAppend = document.querySelector(".search-input");
+      //w.searchInputAppend.value = inputValue;
+      var myVariable = window.opener.inputValue;
+      console.log(searchInputAppend);
+    };
+    searchInputText.value = "";
+    // let searchFound = document.createElement("main");
+    // searchFound.innerHTML = `<h2>I am the text that is found</h2>`;
+    // document.body.append(searchFound);
+  }
+
+  search.addEventListener("click", function (e) {
+    searchHandle();
+  });
+
+  searchInputText.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+      searchHandle();
+    }
+  });
 }
